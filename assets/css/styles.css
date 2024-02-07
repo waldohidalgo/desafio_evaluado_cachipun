@@ -1,0 +1,287 @@
+:root {
+  --font-titulo: "Carter One", system-ui;
+  --font-contenido: "Roboto Slab", serif;
+  --bg-color: #fdf0ba;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #dfebf9;
+}
+header {
+  padding-inline: 1rem;
+  padding-block: 1rem;
+  display: grid;
+  justify-items: center;
+  h1 {
+    text-align: center;
+    padding-bottom: 1rem;
+    font-weight: bold;
+    font-family: var(--font-titulo);
+    font-size: 1.5rem;
+
+    span {
+      color: green;
+      text-decoration: underline;
+    }
+    @media screen and (min-width: 544px) {
+      font-size: 2.5rem;
+    }
+  }
+  img {
+    max-width: 200px;
+    width: 100%;
+    padding-bottom: 1rem;
+  }
+  p {
+    text-align: center;
+    font-family: var(--font-contenido);
+    line-height: 2rem;
+    width: 80%;
+  }
+  .logo_header {
+    cursor: pointer;
+  }
+}
+
+h2 {
+  margin: auto;
+  text-align: center;
+  padding-bottom: 1rem;
+  font-weight: bold;
+  font-family: var(--font-titulo);
+  font-size: 1.25rem;
+  width: fit-content;
+}
+
+.principal {
+  background-color: var(--bg-color);
+  padding-block: 1rem;
+
+  .contenedor {
+    padding-inline: 1rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 1rem;
+    @media screen and (min-width: 544px) {
+      grid-template-columns: 1fr 1fr;
+      row-gap: 0;
+      column-gap: 1rem;
+      justify-items: center;
+    }
+    img {
+      width: 100%;
+      max-width: 500px;
+      cursor: pointer;
+    }
+    figcaption {
+      text-align: center;
+      font-weight: 600;
+      font-family: var(--font-contenido);
+    }
+  }
+}
+.separador {
+  margin-top: 5px;
+  display: block;
+  height: 5px;
+  background-color: green;
+}
+
+.juego {
+  padding-block: 2rem;
+
+  label {
+    display: block;
+    text-align: center;
+    font-family: var(--font-contenido);
+    line-height: 2rem;
+    width: 80%;
+    padding-bottom: 1rem;
+    margin: auto;
+  }
+
+  .input-group {
+    width: 80%;
+    max-width: 360px;
+    margin: auto;
+  }
+  p {
+    padding-bottom: 2rem;
+    text-align: center;
+    display: block;
+    margin: auto;
+    font-family: var(--font-contenido);
+    line-height: 2rem;
+    width: 80%;
+    .show_numero_juegos {
+      color: blue;
+      font-size: 1.5rem;
+      font-family: var(--font-titulo);
+      vertical-align: bottom;
+    }
+  }
+}
+
+.show_numero_juegos_restantes {
+  color: red;
+  font-size: 1.5rem;
+  font-family: var(--font-titulo);
+  vertical-align: bottom;
+}
+
+/*
+Estilos contenedor de jugadas
+*/
+
+.contenedor_jugadas {
+  width: 80%;
+  display: block;
+  margin: auto;
+  label {
+    width: fit-content !important;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding-block: 1rem;
+  }
+  input {
+    cursor: pointer;
+  }
+
+  label::before {
+    content: "";
+    display: inline-block;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 3rem;
+  }
+  label[for="piedra_input"]::before {
+    aspect-ratio: 1.4/1;
+    background-image: url("../img/rock.png");
+  }
+  label[for="papel_input"]::before {
+    aspect-ratio: 1/1;
+    background-image: url("../img/paper.png");
+  }
+  label[for="tijera_input"]::before {
+    aspect-ratio: 1/1;
+    background-image: url("../img/scissors.png");
+  }
+}
+
+.contenedor_jugadas > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#piedra_input:checked {
+  background-color: red;
+  border-color: red;
+}
+
+#papel_input:checked {
+  background-color: blue;
+  border-color: blue;
+}
+#tijera_input:checked {
+  background-color: black;
+  border-color: black;
+}
+#boton_ejecutar_jugada {
+  display: block;
+  margin: auto;
+}
+/*
+Estilos seccion resultados
+*/
+.resultados {
+  max-height: 0;
+  overflow-y: hidden;
+  transition: max-height 1s ease-in-out;
+  background-color: var(--bg-color);
+  h2 {
+    padding-top: 1rem;
+  }
+  p {
+    text-align: center;
+    font-family: var(--font-contenido);
+    line-height: 2rem;
+
+    margin: auto;
+  }
+  img {
+    display: block;
+    padding-block: 1rem;
+    height: 100px;
+    aspect-ratio: 1/1;
+    margin: auto;
+  }
+}
+.contenedor_imagenes_resultados {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 1rem;
+  @media screen and (min-width: 544px) {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 0;
+    column-gap: 1rem;
+    justify-items: center;
+  }
+}
+#informar_ganador {
+  padding-bottom: 1rem;
+}
+/*
+Estilos Footer
+*/
+
+footer {
+  padding: 1rem;
+  font-family: var(--font-contenido);
+  background-color: black;
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 1rem;
+  justify-items: center;
+  @media screen and (min-width: 544px) {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 0;
+    column-gap: 1rem;
+  }
+  .contenedor_logo {
+    img {
+      width: 100%;
+      max-width: 200px;
+      cursor: pointer;
+    }
+  }
+  .contenedor_contenido {
+    .redes_sociales {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      img {
+        max-width: 50px;
+      }
+    }
+    p {
+      text-align: center;
+      span {
+        color: yellow;
+        font-family: var(--font-titulo);
+        a {
+          text-decoration: none;
+          color: inherit;
+        }
+      }
+    }
+  }
+}

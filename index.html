@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=7" />
+    <link rel="stylesheet" href="./assets/css/reset.css" />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <link rel="stylesheet" href="./assets/css/styles_lightbox.css" />
+    <link rel="stylesheet" href="./assets/css/styles_boton_scroll_top.css" />
+    <link
+      rel="shortcut icon"
+      href="./assets/img/logo.ico"
+      type="image/x-icon"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Carter+One&family=Roboto+Slab&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <title>Cachipún contra la máquina</title>
+  </head>
+  <body>
+    <div id="lightbox">
+      <img
+        id="lightbox-image"
+        src="./assets/img/requisitos1.webp"
+        alt="Imagen en lightbox"
+      />
+    </div>
+    <header>
+      <h1>Desafío <span>Cachipún</span> contra la máquina</h1>
+      <a href="./index.html"
+        ><img
+          class="logo_header"
+          src="./assets/img/logo.png"
+          alt="Logo Cachipún"
+          title="Desafío Cachipún"
+      /></a>
+      <p>
+        Segundo Desafío <strong>Evaluado</strong> del módulo
+        <strong>Fundamentos de programación en JavaScript</strong> de la beca
+        Desarrollo de aplicaciones Full Stack Javascript Trainee de Talento
+        Digital para Chile dictada por Desafío Latam
+      </p>
+    </header>
+    <main>
+      <section class="principal">
+        <h2>
+          Requisitos del Proyecto
+          <div class="separador"></div>
+        </h2>
+        <div class="contenedor">
+          <figure>
+            <img
+              class="imagen_requisitos"
+              src="./assets/img/requisitos1.webp"
+              alt="Requisitos Pagina 1"
+            />
+            <figcaption>Figura 1: Página 1 de Requisitos</figcaption>
+          </figure>
+          <figure>
+            <img
+              class="imagen_requisitos"
+              src="./assets/img/requisitos2.webp"
+              alt="Requisitos Pagina 2"
+            />
+            <figcaption>Figura 2: Página 2 de Requisitos</figcaption>
+          </figure>
+        </div>
+      </section>
+      <section class="juego">
+        <h2>
+          Juego Cachipún
+          <div class="separador"></div>
+        </h2>
+        <div class="contenedor_numero_juegos">
+          <label for="numero_juegos"
+            >Para comenzar el juego debes ingresar la cantidad de juegos que
+            deseas realizar:</label
+          >
+          <div class="input-group mb-3">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Ingresa el n° de juegos "
+              aria-label="Número de juegos"
+              aria-describedby="btn_numero_juegos"
+              id="numero_juegos"
+            />
+            <button
+              class="btn btn-success"
+              type="button"
+              id="btn_numero_juegos"
+              title="Haz click aquí para ingresar el número de juegos"
+            >
+              Ingresar
+            </button>
+          </div>
+        </div>
+        <p class="fw-bold">
+          Número de Juegos Ingresado: <span class="show_numero_juegos">0</span>
+        </p>
+        <p class="fw-bold">
+          Número de Juegos Restantes:
+          <span class="show_numero_juegos_restantes">0</span>
+        </p>
+        <h2 id="hacer_jugada">
+          Haz tu jugada
+          <div class="separador"></div>
+        </h2>
+        <p>
+          Selecciona piedra, papel o tijera.
+          <strong>Solo puedes seleccionar un tipo.</strong>
+        </p>
+        <div class="form-check form-switch contenedor_jugadas">
+          <div>
+            <input
+              class="form-check-input"
+              type="radio"
+              id="piedra_input"
+              name="jugada"
+              title="Jugar Piedra"
+              disabled
+            />
+            <label
+              class="form-check-label"
+              for="piedra_input"
+              title="Seleccionar Piedra"
+              >Jugar Piedra</label
+            >
+          </div>
+          <div>
+            <input
+              class="form-check-input"
+              type="radio"
+              id="papel_input"
+              name="jugada"
+              title="Jugar Papel"
+              disabled
+            />
+            <label
+              class="form-check-label"
+              for="papel_input"
+              title="Seleccionar Papel"
+              >Jugar Papel</label
+            >
+          </div>
+          <div>
+            <input
+              class="form-check-input"
+              type="radio"
+              id="tijera_input"
+              name="jugada"
+              title="Jugar Tijera"
+              disabled
+            />
+            <label
+              class="form-check-label"
+              for="tijera_input"
+              title="Seleccionar Tijera"
+              >Jugar Tijera</label
+            >
+          </div>
+        </div>
+        <button
+          id="boton_ejecutar_jugada"
+          type="button"
+          class="btn btn-primary"
+          disabled
+        >
+          Haz click para que juegue la máquina
+        </button>
+      </section>
+      <section class="resultados">
+        <h2>
+          Resultado
+          <div class="separador"></div>
+        </h2>
+        <p class="fw-bold">
+          Número de Juegos Restantes:
+          <span class="show_numero_juegos_restantes">0</span>
+        </p>
+        <div class="contenedor_imagenes_resultados">
+          <div class="contenedor_imagen">
+            <p>Tu has jugado:</p>
+            <img
+              src="./assets/img/paper.png"
+              alt="Imagen de Jugada Humano"
+              id="imagen_jugada_humano"
+            />
+          </div>
+          <div class="contenedor_imagen">
+            <p>La máquina ha jugado:</p>
+            <img
+              src="./assets/img/paper.png"
+              alt="Imagen de Jugada Maquina"
+              id="imagen_jugada_maquina"
+            />
+          </div>
+        </div>
+
+        <h2>El ganador es:</h2>
+        <p id="informar_ganador"></p>
+      </section>
+    </main>
+    <footer>
+      <div class="contenedor_logo">
+        <a href="./index.html"
+          ><img
+            src="./assets/img/logo.png"
+            alt="Logo Cachipun"
+            title="Desafío Cachipún"
+        /></a>
+      </div>
+      <div class="contenedor_contenido">
+        <p>
+          Página Web desarrollada 100% por
+          <span
+            ><a
+              href="https://linktr.ee/waldohidalgo"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Waldo Hidalgo Oyarce</a
+            ></span
+          >
+        </p>
+        <div class="redes_sociales">
+          <a
+            href="https://github.com/waldohidalgo"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><img
+              src="./assets/img/github.png"
+              alt="Github"
+              title="Ir a mi perfil en github"
+          /></a>
+          <a
+            href="https://www.linkedin.com/in/waldo-hidalgo-oyarce/"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><img
+              src="./assets/img/linkedin.png"
+              alt="LinkedIn"
+              title="Ir a mi perfil en LinkedIn"
+          /></a>
+        </div>
+      </div>
+      <button id="scrollBtn" title="Ir a Inicio">
+        <i class="fa fa-chevron-circle-up"></i>
+      </button>
+    </footer>
+    <script
+      src="https://kit.fontawesome.com/d1b9dc6536.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./assets/js/script_control_juego.js"></script>
+    <script src="./assets/js/script_lightbox.js"></script>
+    <script src="./assets/js/script_scroll_btn.js"></script>
+  </body>
+</html>
