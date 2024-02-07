@@ -138,6 +138,9 @@ function reducirNumeroJugadas() {
 
 boton_ejecutar_jugada.addEventListener("click", () => {
   seccion_resultados.style.maxHeight = "1000px";
+  setTimeout(() => {
+    seccion_resultados.scrollIntoView({ behavior: "smooth" });
+  }, 500);
 
   let jugada_humano = null;
 
